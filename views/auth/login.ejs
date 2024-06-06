@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Montserrat', sans-serif;
+}
+
+body {
+   background-color: #c9d6ff; 
+   background: linear-gradient(to right, #c9d6ff);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+    height: 100vh;
+}
+.container{
+   background-color: #fff;  
+   border-radius: 30px; 
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+   position: relative;
+   overflow: hidden;
+   width: 768px;
+   max-width: 100%;
+   min-height: 480px;
+} 
+
+.container p{
+    font-size: 14px;
+}
+   </style>
+   
+<div class="container" id="container">
+   <div class="form-container sign-up">
+      <form>
+          <h1>Create Account</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fas fa-google-plus-g"></i></a>
+            <a href="#" class="icon"><i class="fas fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fas fa-github"></i></a>
+            <a href="#" class="icon"><i class="fas fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email for registration </span>
+          <input type="text" placeholder="firstName">
+          <input type="text" placeholder="lastName">
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="password">
+           <button>Sign Up</button>
+
+           <h1>Sign In</h1>
+           <div class="social-icons">
+             <a href="#" class="icon"><i class="fas fa-google-plus-g"></i></a>
+             <a href="#" class="icon"><i class="fas fa-facebook-f"></i></a>
+             <a href="#" class="icon"><i class="fas fa-github"></i></a>
+             <a href="#" class="icon"><i class="fas fa-linkedin-in"></i></a>
+           </div>
+           <span>or use your email password </span>
+           <input type="email" placeholder="Email">
+           <input type="password" placeholder="password">
+           <a href="#">Forgot Your Password</a>
+            <button>Sign In</button>
+      </form>
+   </div>
+   <div class="toogle-container">
+      <div class="toggle">
+        <div class="toggle-panel" toggle-left>
+         <h1>Welcome Back!</h1>
+         <p> Enter your personal details to use all of site features</p>
+         <button class="hidden" id="login">Sign In</button>
+        </div> 
+        <div class="toogle-container">
+         <div class="toggle">
+           <div class="toggle-panel" toggle-right>
+            <h1>Hello friend!</h1>
+            <p> Register with your personal details to use all of site features</p>
+            <button class="hidden" id="Register">Sign Up</button>
+           </div> 
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
