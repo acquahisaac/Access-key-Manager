@@ -51,6 +51,8 @@ body {
     border-radius: 8px;
     font-weight: 600; 
     letter-spacing: 0.5px;
-
-
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
 }
+.container
