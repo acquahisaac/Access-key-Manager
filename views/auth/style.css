@@ -92,3 +92,13 @@ body {
     z-index: 2; 
 }
 
+.container .active .sign-inm {
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+
+}
