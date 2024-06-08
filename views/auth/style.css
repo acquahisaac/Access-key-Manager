@@ -61,7 +61,7 @@ body {
    background-color: transparent;  
    border-color: #fff;
 }
-.container-form{
+.container form{
     background-color: #fff;
     display: flex;
     align-items: center;
