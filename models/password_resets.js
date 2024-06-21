@@ -4,13 +4,24 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class password_resets extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+   
     static associate(models) {
       // define association here
+      password_resets({
+        email:{
+          type:DataTypes.STRING,
+          allowNull: false
+        },
+        token: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        created_at: {
+          type: DataTypes.DATE,
+          allowNull: false,
+          defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+        }
+      })
     }
   }
   password_resets.init({
@@ -20,6 +31,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'password_resets',
+    tableName: 'password_resets',
+    timestamps: false
   });
   return password_resets;
 };
