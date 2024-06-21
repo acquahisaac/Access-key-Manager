@@ -35,4 +35,4 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false
   });
   return password_resets;
-};
+}; 
