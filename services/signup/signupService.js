@@ -4,19 +4,16 @@ const User = require('../../models/user'); // path to your User model
 const bcrypt = require('bcrypt');
 
 
-const authWithEmailAndPassword = async (email, password) => {
+const saveUser = async (email, password , firstName ,lastName ) => {
   try {
-
-    const user = await User.findOne({ where: { email: email } });
+   
+   
+    const user = await User.create({ firstName: firstName 
+      , lastName: lastName,email:email,
+      email_verified_at:email_verified_at
+     });;
     if (user != null) {
-      bcrypt.compare(password, user.password, function (err, result) {
-
-        if (result) {
-          return true
-        } else {
-          return false
-        }
-      });
+       
     } else {
 
       return false;

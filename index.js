@@ -1,4 +1,4 @@
-const logger = require('./logger/logger'); // Import the logger
+const logger = require('./Logger/logger')
 
 // Override console.log to use Winston
 console.log = function(...args) {
@@ -12,6 +12,7 @@ console.error = function(...args) {
 const express = require('express');
 const app = express();
 const port = 3000;
+const path = require('path');
 var bodyParser = require('body-parser')
 const authController = require('./controllers/auth/login');
 // parse application/x-www-form-urlencoded
@@ -26,12 +27,15 @@ app.set('view engine', 'ejs');
 // Define the default views directory
 app.set('views', __dirname + '/views');
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 //controller
 app.set('controllers', __dirname + '/controllers');
 
 app.get('/', authController.login);
 
-app.post('/login' ,authController.authenticateUser);
+app.post('/',authController.authenticateUser);
 
 app.listen(port, () => {
   console.log(`app is running on port ${port}`);

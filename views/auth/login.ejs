@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up and Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9f0e6a0865.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h3 class="heading">School Management Platform</h3>
+            <h1 id="title">Sign Up</h1>
+            <form id="mainForm" method="post" enctype="multipart/form-data" action="/">
+                <input type="hidden" name="action" id="formAction" value="signup">
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="name" id="nameInput" placeholder="Name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <button type="submit" id="formSubmitButton">Sign Up</button>
+                </div>
+                <p>Forgot Password? <a href="#">Click here!</a></p>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn" class="disable">Sign Up</button>
+                    <button type="button" id="loginBtn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let signupBtn = document.getElementById("signupBtn");
+        let loginBtn = document.getElementById("loginBtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById('title');
+        let formSubmitButton = document.getElementById('formSubmitButton');
+        let formAction = document.getElementById('formAction');
+        let nameInput = document.getElementById('nameInput');
+        let mainForm = document.getElementById('mainForm');
+
+        loginBtn.onclick = function () {
+            nameField.style.display = "none";
+            nameInput.value = "";  // Clear the value when switching to login
+            title.innerHTML = "Login";
+            formSubmitButton.innerHTML = "Login";
+            formAction.value = "login";
+            signupBtn.classList.remove("disable");
+            loginBtn.classList.add("disable");
+            console.log("Action set to login");
+        }
+
+        signupBtn.onclick = function () {
+            nameField.style.display = "block";
+            title.innerHTML = "Sign Up";
+            formSubmitButton.innerHTML = "Sign Up";
+            formAction.value = "signup";
+            signupBtn.classList.add("disable");
+            loginBtn.classList.remove("disable");
+            console.log("Action set to signup");
+        }
+
+        mainForm.onsubmit = function () {
+            console.log("Form submitted with action:", formAction.value);
+        }
+    </script>
+</body>
+</html>
