@@ -1,4 +1,4 @@
-const logger = require('../../logger/logger'); // Import the logger
+const logger = require('../../Logger/logger'); // Import the logger
 const sequelize = require('../../database');
 const User = require('../../models/user'); // path to your User model
 const bcrypt = require('bcrypt');
