@@ -1,5 +1,5 @@
 
-const logger = require('../../logger/logger'); // Import the logger
+const logger = require('../../Logger/logger'); // Import the logger
 const authService = require('../../services/auth/authService');
 
 const login = (req, res) => {
