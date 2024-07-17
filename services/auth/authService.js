@@ -1,7 +1,7 @@
 const logger = require('../../Logger/logger'); // Import the logger
 const sequelize = require('../../database');
 const User = require('../../models/user'); // path to your User model
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcryptjs");
 
 
 const authWithEmailAndPassword = async (email, password) => {
